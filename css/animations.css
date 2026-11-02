@@ -1,0 +1,456 @@
+/* ============================================= */
+/* ANIMATIONS.CSS — Keyframe Animations           */
+/* ============================================= */
+
+/* ---------- Glow Pulse ---------- */
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(0, 240, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 30px rgba(0, 240, 255, 0.6), 0 0 60px rgba(0, 240, 255, 0.2);
+    }
+}
+
+/* ---------- Text Glow Pulse ---------- */
+@keyframes textGlowPulse {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(0, 240, 255, 0.8), 0 0 40px rgba(0, 240, 255, 0.4);
+    }
+}
+
+/* ---------- Boot Loader ---------- */
+@keyframes bootLoad {
+    0% { width: 0%; }
+    30% { width: 40%; }
+    60% { width: 70%; }
+    80% { width: 85%; }
+    100% { width: 100%; }
+}
+
+/* ---------- Blink ---------- */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* ---------- Fade In ---------- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ---------- Fade In Up ---------- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- Fade In Down ---------- */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- Scale In ---------- */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ---------- Scale In Bounce ---------- */
+@keyframes scaleInBounce {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ---------- Slide In Left ---------- */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ---------- Slide In Right ---------- */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ---------- Star Pop ---------- */
+@keyframes starPop {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.4); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+/* ---------- Damage Flash ---------- */
+@keyframes damageFlash {
+    0% { filter: brightness(1); }
+    25% { filter: brightness(3) hue-rotate(-30deg); }
+    50% { filter: brightness(1); }
+    75% { filter: brightness(2) hue-rotate(-15deg); }
+    100% { filter: brightness(1); }
+}
+
+/* ---------- Boss Entrance ---------- */
+@keyframes bossEntrance {
+    0% {
+        opacity: 0;
+        transform: scale(3) translateY(-50px);
+        filter: brightness(5);
+    }
+    40% {
+        opacity: 1;
+        transform: scale(1.2) translateY(0);
+        filter: brightness(2);
+    }
+    60% {
+        transform: scale(0.95);
+        filter: brightness(1);
+    }
+    80% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+}
+
+/* ---------- Boss Idle Hover ---------- */
+@keyframes bossIdle {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* ---------- Shake ---------- */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10% { transform: translateX(-5px); }
+    20% { transform: translateX(5px); }
+    30% { transform: translateX(-5px); }
+    40% { transform: translateX(5px); }
+    50% { transform: translateX(-3px); }
+    60% { transform: translateX(3px); }
+    70% { transform: translateX(-2px); }
+    80% { transform: translateX(2px); }
+    90% { transform: translateX(-1px); }
+}
+
+/* ---------- Phase Transition ---------- */
+@keyframes phaseFlash {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    20% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    80% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+}
+
+/* ---------- Combo Fire ---------- */
+@keyframes comboFire {
+    0% {
+        text-shadow: 0 0 5px var(--neon-gold);
+        transform: scale(1);
+    }
+    50% {
+        text-shadow: 0 0 20px var(--neon-gold), 0 0 40px var(--neon-orange);
+        transform: scale(1.15);
+    }
+    100% {
+        text-shadow: 0 0 5px var(--neon-gold);
+        transform: scale(1);
+    }
+}
+
+/* ---------- Victory Celebration ---------- */
+@keyframes victorySpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes victoryFloat {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.1); }
+}
+
+/* ---------- Typing Cursor Blink ---------- */
+@keyframes cursorBlink {
+    0%, 100% { border-color: var(--neon-cyan); }
+    50% { border-color: transparent; }
+}
+
+/* ---------- Damage Number Float ---------- */
+@keyframes damageFloat {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-30px) scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-60px) scale(0.8);
+    }
+}
+
+/* ---------- Pulse Ring ---------- */
+@keyframes pulseRing {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* ---------- Floating Ambient Particle ---------- */
+@keyframes floatUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100vh) translateX(0);
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px) translateX(var(--drift, 30px));
+    }
+}
+
+/* ---------- Word Spawn ---------- */
+@keyframes wordSpawn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+        filter: brightness(3);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: brightness(1);
+    }
+}
+
+/* ---------- Correct Word Pop ---------- */
+@keyframes correctPop {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.8; }
+    100% { transform: scale(0); opacity: 0; }
+}
+
+/* ---------- Wrong Key Shake ---------- */
+@keyframes wrongShake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-8px); }
+    40% { transform: translateX(8px); }
+    60% { transform: translateX(-4px); }
+    80% { transform: translateX(4px); }
+}
+
+/* ---------- Gradient Border Spin ---------- */
+@keyframes borderSpin {
+    0% { --angle: 0deg; }
+    100% { --angle: 360deg; }
+}
+
+/* ---------- Background scan line ---------- */
+@keyframes scanline {
+    0% { top: -10%; }
+    100% { top: 110%; }
+}
+
+/* ---------- Combo Explosion (new) ---------- */
+@keyframes comboExplosion {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+        filter: brightness(3);
+    }
+    40% {
+        transform: scale(1.5);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
+        filter: brightness(1);
+    }
+}
+
+/* ---------- Energy Pulse (new) ---------- */
+@keyframes energyPulse {
+    0% {
+        box-shadow: 0 0 5px currentColor;
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 30px currentColor, 0 0 60px currentColor;
+        transform: scale(1.05);
+    }
+    100% {
+        box-shadow: 0 0 5px currentColor;
+        transform: scale(1);
+    }
+}
+
+/* ---------- Neon Flicker (new) ---------- */
+@keyframes neonFlicker {
+    0%, 100% { opacity: 1; }
+    5% { opacity: 0.5; }
+    10% { opacity: 1; }
+    15% { opacity: 0.7; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    85% { opacity: 0.4; }
+    90% { opacity: 1; }
+}
+
+/* ---------- Holo Scan (new) ---------- */
+@keyframes holoScan {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
+/* ---------- Impact Wave (new) ---------- */
+@keyframes impactWave {
+    0% {
+        transform: scale(0.3);
+        opacity: 0.8;
+        border-width: 4px;
+    }
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+        border-width: 1px;
+    }
+}
+
+/* ---------- Character Attack Lunge (new) ---------- */
+@keyframes attackLunge {
+    0% { transform: translateX(0); }
+    30% { transform: translateX(40px); }
+    60% { transform: translateX(30px); }
+    100% { transform: translateX(0); }
+}
+
+/* ---------- Combo Fire Glow (new) ---------- */
+@keyframes comboFireGlow {
+    0% {
+        text-shadow: 0 0 5px var(--combo-fire);
+        transform: scale(1);
+    }
+    25% {
+        text-shadow: 0 0 25px var(--combo-fire), 0 0 50px var(--combo-fire);
+        transform: scale(1.2) rotate(-2deg);
+    }
+    50% {
+        text-shadow: 0 0 15px var(--combo-fire), 0 0 30px var(--neon-orange);
+        transform: scale(1.15) rotate(2deg);
+    }
+    75% {
+        text-shadow: 0 0 25px var(--combo-fire), 0 0 50px var(--combo-fire);
+        transform: scale(1.2) rotate(-1deg);
+    }
+    100% {
+        text-shadow: 0 0 5px var(--combo-fire);
+        transform: scale(1);
+    }
+}
+
+/* ---------- Screen Vignette Pulse (new) ---------- */
+@keyframes vignettePulse {
+    0%, 100% {
+        box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+        box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* ---------- Floating Word Dissolve (new) ---------- */
+@keyframes wordDissolve {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.1) translateY(-5px);
+        filter: blur(3px);
+    }
+}
+

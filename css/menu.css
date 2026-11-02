@@ -1,0 +1,453 @@
+/* ============================================= */
+/* MENU.CSS — Main Menu & Chapter Select          */
+/* ============================================= */
+
+/* ---------- Menu Header ---------- */
+.menu-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.game-title {
+    font-family: var(--font-display);
+    font-size: 4.5rem;
+    font-weight: 900;
+    letter-spacing: 8px;
+    margin-bottom: 12px;
+    line-height: 1.1;
+    position: relative;
+    animation: titleEntrance 1.5s ease-out;
+}
+
+@keyframes titleEntrance {
+    0% { opacity: 0; transform: scale(0.5) translateY(-40px); filter: blur(20px); }
+    50% { opacity: 1; transform: scale(1.05) translateY(0); filter: blur(0); }
+    70% { transform: scale(0.98); }
+    100% { transform: scale(1); }
+}
+
+.title-type {
+    color: var(--neon-cyan);
+    text-shadow: 
+        0 0 10px rgba(0, 240, 255, 0.6),
+        0 0 30px rgba(0, 240, 255, 0.4),
+        0 0 60px rgba(0, 240, 255, 0.2),
+        0 0 100px rgba(0, 240, 255, 0.1);
+    animation: titleGlowCyan 3s ease-in-out infinite;
+}
+
+@keyframes titleGlowCyan {
+    0%, 100% { text-shadow: 0 0 10px rgba(0,240,255,0.6), 0 0 30px rgba(0,240,255,0.4), 0 0 60px rgba(0,240,255,0.2); }
+    50%      { text-shadow: 0 0 20px rgba(0,240,255,0.8), 0 0 50px rgba(0,240,255,0.6), 0 0 100px rgba(0,240,255,0.3), 0 0 150px rgba(0,240,255,0.1); }
+}
+
+.title-master {
+    color: var(--neon-magenta);
+    text-shadow: 
+        0 0 10px rgba(255, 0, 170, 0.6),
+        0 0 30px rgba(255, 0, 170, 0.4),
+        0 0 60px rgba(255, 0, 170, 0.2),
+        0 0 100px rgba(255, 0, 170, 0.1);
+    animation: titleGlowMagenta 3s ease-in-out infinite 0.5s;
+}
+
+@keyframes titleGlowMagenta {
+    0%, 100% { text-shadow: 0 0 10px rgba(255,0,170,0.6), 0 0 30px rgba(255,0,170,0.4), 0 0 60px rgba(255,0,170,0.2); }
+    50%      { text-shadow: 0 0 20px rgba(255,0,170,0.8), 0 0 50px rgba(255,0,170,0.6), 0 0 100px rgba(255,0,170,0.3), 0 0 150px rgba(255,0,170,0.1); }
+}
+
+.game-tagline {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.8s forwards;
+}
+
+/* ---------- Player Card ---------- */
+.menu-player-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(20px);
+    padding: 20px 28px;
+    margin-bottom: 36px;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+    box-shadow: var(--shadow-md);
+}
+
+.player-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--bg-medium), var(--bg-light));
+    border: 2px solid var(--neon-cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+    flex-shrink: 0;
+}
+
+.player-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.player-name {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-bright);
+    letter-spacing: 1px;
+}
+
+.player-level {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--neon-purple);
+    margin-top: 2px;
+}
+
+.player-stats {
+    display: flex;
+    gap: 16px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-value {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--neon-cyan);
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ---------- Menu Actions ---------- */
+.menu-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* ---------- Chapter Select Grid ---------- */
+.chapters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.chapter-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(15px);
+    padding: 24px;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.5s ease-out both;
+}
+
+.chapter-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent, rgba(255,255,255,0.02));
+    transition: opacity var(--transition-normal);
+    opacity: 0;
+}
+
+.chapter-card:hover::before {
+    opacity: 1;
+}
+
+.chapter-card:hover {
+    border-color: var(--neon-cyan);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow-cyan);
+}
+
+.chapter-card.locked {
+    opacity: 0.4;
+    cursor: not-allowed;
+    filter: grayscale(0.5);
+}
+
+.chapter-card.locked:hover {
+    transform: none;
+    border-color: var(--glass-border);
+    box-shadow: none;
+}
+
+.chapter-card.completed {
+    border-color: rgba(0, 255, 136, 0.3);
+}
+
+.chapter-number {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.chapter-name {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-bright);
+    margin-bottom: 4px;
+}
+
+.chapter-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.chapter-boss {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: var(--neon-magenta);
+    font-family: var(--font-mono);
+}
+
+.chapter-boss-icon {
+    font-size: 1.2rem;
+}
+
+.chapter-keys {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 12px;
+}
+
+.chapter-key {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    background: rgba(0, 240, 255, 0.1);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    border-radius: 4px;
+    color: var(--neon-cyan);
+}
+
+.chapter-progress {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chapter-progress-bar {
+    flex: 1;
+    height: 4px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.chapter-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-green));
+    border-radius: 2px;
+    transition: width 0.5s ease;
+}
+
+.chapter-progress-text {
+    font-size: 0.65rem;
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+}
+
+.chapter-lock-icon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 1.5rem;
+    opacity: 0.5;
+}
+
+.chapter-complete-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 0.65rem;
+    font-family: var(--font-display);
+    color: var(--neon-green);
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    border-radius: var(--radius-sm);
+    background: rgba(0, 255, 136, 0.1);
+}
+
+/* ---------- Lesson Select ---------- */
+.lessons-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 700px;
+}
+
+.lesson-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    animation: fadeInUp 0.4s ease-out both;
+}
+
+.lesson-item:hover {
+    border-color: var(--neon-cyan);
+    transform: translateX(6px);
+    background: rgba(15, 20, 50, 0.9);
+}
+
+.lesson-item.locked {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.lesson-item.locked:hover {
+    transform: none;
+    border-color: var(--glass-border);
+    background: var(--glass-bg);
+}
+
+.lesson-item.completed {
+    border-left: 3px solid var(--neon-green);
+}
+
+.lesson-number {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    min-width: 30px;
+}
+
+.lesson-details {
+    flex: 1;
+}
+
+.lesson-title {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+
+.lesson-description {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.lesson-stars {
+    display: flex;
+    gap: 2px;
+}
+
+.lesson-stars .star {
+    font-size: 1rem;
+}
+
+.lesson-type-badge {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.lesson-type-badge.training {
+    background: rgba(0, 240, 255, 0.1);
+    color: var(--neon-cyan);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+.lesson-type-badge.drill {
+    background: rgba(255, 215, 0, 0.1);
+    color: var(--neon-gold);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.lesson-type-badge.boss {
+    background: rgba(255, 0, 170, 0.1);
+    color: var(--neon-magenta);
+    border: 1px solid rgba(255, 0, 170, 0.2);
+}
+
+/* ---------- Free Play Options ---------- */
+.freeplay-options {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.freeplay-setting {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 20px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+}
+
+.freeplay-setting label {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: 1px;
+}
